@@ -1,0 +1,36 @@
+{
+  "name": "task-list-demo",
+  "version": "1.0.0",
+  "description": "A demo application to show how to use the new task list component in a form wizard application",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "clean": "rm -rf public/; mkdir public",
+    "build": "npm run build:sass && npm run build:js",
+    "build:sass": "mkdir -p public/stylesheets; sass --quiet --load-path . --style compressed --no-source-map assets/stylesheets/app.scss public/stylesheets/application.css",
+    "build:js": "mkdir -p public/javascripts && rollup -c",
+    "postinstall": "npm run clean && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "HMPO",
+  "license": "MIT",
+  "dependencies": {
+    "express": "4",
+    "govuk-frontend": "latest",
+    "hmpo-app": "latest",
+    "hmpo-components": "git+https://github.com/beattryan/hmpo-components.git#feature/task-list-component",
+    "hmpo-config": "latest",
+    "hmpo-form-wizard": "git+https://github.com/beattryan/hmpo-form-wizard.git#feature/support-new-task-list-component",
+    "hmpo-i18n": "latest",
+    "hmpo-logger": "latest",
+    "moment": "2",
+    "nunjucks": "3"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-terser": "^0.4.4",
+    "rollup": "^4.42.0",
+    "sass": "latest"
+  }
+}

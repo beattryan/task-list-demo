@@ -1,0 +1,10 @@
+{% set hmpoPageKey = "apply.taskList" %}
+
+{% extends "task-list-template.njk" %}
+
+{% block submitButton %}
+    {{ hmpoSubmit(ctx, {
+        key: "next",
+        href: "/apply/confirm"
+    }) }}
+{% endblock %}
