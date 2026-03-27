@@ -7,12 +7,18 @@ default:
 
 taskList:
   label: Your application
-  status:
-    complete: Completed
-    incomplete: Incomplete
+  statuses:
+    default: Incomplete
+    completed: Completed
   tasks:
     yourName:
       title: Your name
+    contactDetails:
+      title: Contact details
+    address:
+      title: Your address
+    passport:
+      title: Passport details
 
 date-day:
   label: Day
@@ -29,6 +35,49 @@ uk:
 dateOfBirth:
   label: Date of birth
   hint: For example, 20 01 2004
+
+email:
+  label: Email address
+  validation:
+    required: Enter your email address
+    email: Enter a valid email address
+
+phone:
+  label: Phone number
+  validation:
+    required: Enter your phone number
+
+addressLine1:
+  label: Address line 1
+  validation:
+    required: Enter your address
+
+town:
+  label: Town or city
+  validation:
+    required: Enter your town or city
+
+postcode:
+  label: Postcode
+  validation:
+    required: Enter your postcode
+
+passportNumber:
+  label: Passport number
+  validation:
+    required: Enter your passport number
+
+passportCountry:
+  label: Country of issue
+  validation:
+    required: Enter the country that issued your passport
+
+passportExpiry:
+  label: Expiry date
+  hint: For example, 27 3 2030
+  validation:
+    required: Enter your passport expiry date
+    date: Enter a valid expiry date
 
 title:
   label: Title

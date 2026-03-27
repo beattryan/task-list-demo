@@ -3,6 +3,8 @@
 
 {% extends "form-template.njk" %}
 
+{% set hmpoPageKey = "confirm" %}
+
 {% set contentPrefix = "pages.confirm." %}
 
 {% block innerContent %}
@@ -15,7 +17,7 @@
                     items: [{
                         href: "/eligibility/date-of-birth/edit",
                         text: translate(contentPrefix + "change"),
-                        visuallyHiddenText: translate(contentPrefix + "rows.name.key")
+                        visuallyHiddenText: translate(contentPrefix + "rows.dateOfBirth.key")
                     }]
                 }
             },
@@ -38,6 +40,72 @@
                         href: "/apply/name/edit",
                         text: translate(contentPrefix + "change"),
                         visuallyHiddenText: translate(contentPrefix + "rows.name.key")
+                    }]
+                }
+            },
+            {
+                key: { text: translate(contentPrefix + "rows.email.key") },
+                value: { text: values.email },
+                actions: {
+                    items: [{
+                        href: "/apply/contact-details/edit",
+                        text: translate(contentPrefix + "change"),
+                        visuallyHiddenText: translate(contentPrefix + "rows.email.key")
+                    }]
+                }
+            },
+            {
+                key: { text: translate(contentPrefix + "rows.phone.key") },
+                value: { text: values.phone },
+                actions: {
+                    items: [{
+                        href: "/apply/contact-details/edit",
+                        text: translate(contentPrefix + "change"),
+                        visuallyHiddenText: translate(contentPrefix + "rows.phone.key")
+                    }]
+                }
+            },
+            {
+                key: { text: translate(contentPrefix + "rows.address.key") },
+                value: { html: values.addressLine1 + "<br>" + values.town + "<br>" + values.postcode },
+                actions: {
+                    items: [{
+                        href: "/apply/address/edit",
+                        text: translate(contentPrefix + "change"),
+                        visuallyHiddenText: translate(contentPrefix + "rows.address.key")
+                    }]
+                }
+            },
+            {
+                key: { text: translate(contentPrefix + "rows.passportNumber.key") },
+                value: { text: values.passportNumber },
+                actions: {
+                    items: [{
+                        href: "/apply/passport/edit",
+                        text: translate(contentPrefix + "change"),
+                        visuallyHiddenText: translate(contentPrefix + "rows.passportNumber.key")
+                    }]
+                }
+            },
+            {
+                key: { text: translate(contentPrefix + "rows.passportCountry.key") },
+                value: { text: values.passportCountry },
+                actions: {
+                    items: [{
+                        href: "/apply/passport-country/edit",
+                        text: translate(contentPrefix + "change"),
+                        visuallyHiddenText: translate(contentPrefix + "rows.passportCountry.key")
+                    }]
+                }
+            },
+            {
+                key: { text: translate(contentPrefix + "rows.passportExpiry.key") },
+                value: { text: values.passportExpiry | date("D MMMM YYYY") },
+                actions: {
+                    items: [{
+                        href: "/apply/passport-expiry/edit",
+                        text: translate(contentPrefix + "change"),
+                        visuallyHiddenText: translate(contentPrefix + "rows.passportExpiry.key")
                     }]
                 }
             }

@@ -19,7 +19,22 @@ ineligible:
   content: This is because you live outside of the UK.
 
 name:
-  title: Name
+  title: Your name
+
+passport:
+  title: Passport number
+
+passport-country:
+  title: Country of issue
+
+passport-expiry:
+  title: Passport expiry date
+
+contact-details:
+  title: Contact details
+
+address:
+  title: Your address
 
 confirm:
   title: Check and submit your answers
@@ -27,9 +42,21 @@ confirm:
     title:
       key: Title
     name:
-      key: Name
+      key: Full name
     dateOfBirth:
       key: Date of birth
+    email:
+      key: Email address
+    phone:
+      key: Phone number
+    address:
+      key: Address
+    passportNumber:
+      key: Passport number
+    passportCountry:
+      key: Country of issue
+    passportExpiry:
+      key: Passport expiry date
   change: Change
 
 submit:

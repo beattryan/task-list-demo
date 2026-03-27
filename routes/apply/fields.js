@@ -1,11 +1,30 @@
 module.exports = {
     taskList: {
         type: 'task-list',
+        statuses: {
+            default: 'blue',
+            completed: false
+        },
         tasks: [
             {
                 id: 'yourName',
                 href: '/apply/name',
-                completedField: 'yourNameComplete'
+                statusField: 'yourNameComplete'
+            },
+            {
+                id: 'contactDetails',
+                href: '/apply/contact-details',
+                statusField: 'contactDetailsComplete'
+            },
+            {
+                id: 'address',
+                href: '/apply/address',
+                statusField: 'addressComplete'
+            },
+            {
+                id: 'passport',
+                href: '/apply/passport',
+                statusField: 'passportComplete'
             }
         ]
     },
@@ -34,6 +53,70 @@ module.exports = {
             { type: 'maxlength', arguments: 30 },
             'alphaex1'
         ]
+    },
+
+    email: {
+        journeyKey: 'applicant.email',
+        type: 'text',
+        validate: [
+            'required',
+            'email',
+            { type: 'maxlength', arguments: 255 }
+        ]
+    },
+    phone: {
+        journeyKey: 'applicant.phone',
+        type: 'text',
+        validate: [
+            'required',
+            { type: 'maxlength', arguments: 20 }
+        ]
+    },
+    addressLine1: {
+        journeyKey: 'address.line1',
+        type: 'text',
+        validate: [
+            'required',
+            { type: 'maxlength', arguments: 255 }
+        ]
+    },
+    town: {
+        journeyKey: 'address.town',
+        type: 'text',
+        validate: [
+            'required',
+            { type: 'maxlength', arguments: 255 }
+        ]
+    },
+    postcode: {
+        journeyKey: 'address.postcode',
+        type: 'text',
+        validate: [
+            'required',
+            { type: 'maxlength', arguments: 10 }
+        ]
+    },
+
+    passportNumber: {
+        journeyKey: 'passport.number',
+        type: 'text',
+        validate: [
+            'required',
+            { type: 'maxlength', arguments: 20 }
+        ]
+    },
+    passportCountry: {
+        journeyKey: 'passport.country',
+        type: 'text',
+        validate: [
+            'required',
+            { type: 'maxlength', arguments: 100 }
+        ]
+    },
+    passportExpiry: {
+        journeyKey: 'passport.expiry',
+        type: 'date',
+        validate: ['required', 'date']
     },
 
     // Eligibility fields
